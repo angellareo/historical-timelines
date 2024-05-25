@@ -119,7 +119,7 @@ def event_labels(
     plot.add_layout(labels)
 
 
-def render_periods(plot: figure, period_list: list, height: float = 0.3) -> None:
+def render_periods(plot: figure, period_list: list, height: float = 0.3, color: str = "red") -> None:
     """Render the periods on the plot
 
     Args:
@@ -130,7 +130,7 @@ def render_periods(plot: figure, period_list: list, height: float = 0.3) -> None
     for i in range(len(period_list)):
         period_group = period_list[i]
         source = get_source_from_event_dict(period_group)
-        plot.hbar(right='start', left='end', y=value("p" + str(i)), height=height, color='red', source=source)
+        plot.hbar(right='start', left='end', y=value("p" + str(i)), height=height, color=color, source=source)
 
 
 def period_labels(
